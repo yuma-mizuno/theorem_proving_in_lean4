@@ -6,13 +6,15 @@
 自然で統一された方法で推論したりすることができます。Leanは*Calculus of Constructions*
 として知られる依存型理論の一種に基づいており、さらに可算階層の非累積宇宙と帰納的型を
 備えています。この章が終わるころには、これが何を意味するのかが理解できるでしょう。
-<!-- Dependent type theory is a powerful and expressive language, allowing
+<!-- 
+Dependent type theory is a powerful and expressive language, allowing
 you to express complex mathematical assertions, write complex hardware
 and software specifications, and reason about both of these in a
 natural and uniform way. Lean is based on a version of dependent type
 theory known as the *Calculus of Constructions*, with a countable
 hierarchy of non-cumulative universes and inductive types. By the end
-of this chapter, you will understand much of what this means. -->
+of this chapter, you will understand much of what this means. 
+-->
 
 ## 単純型理論
 <!-- ## Simple Type Theory -->
@@ -21,14 +23,16 @@ of this chapter, you will understand much of what this means. -->
 例えば、ある文脈では ``x + 0`` は自然数を表し、``f`` は自然数に対する関数を表します。
 正確な定義が好きな人のためにいうと、Leanの自然数は任意精度の符号なし整数です。
 以下は、Lean でオブジェクトを宣言し、その型を確認する方法の例です。
-<!-- "Type theory" gets its name from the fact that every expression has an
+<!-- 
+"Type theory" gets its name from the fact that every expression has an
 associated *type*. For example, in a given context, ``x + 0`` may
 denote a natural number and ``f`` may denote a function on the natural
 numbers. For those who like precise definitions, a Lean natural number
 is an arbitrary-precision unsigned integer.
 
 Here are some examples of how you can declare objects in Lean and
-check their types. -->
+check their types. 
+-->
 
 ```lean
 /- Define some constants. -/
@@ -55,7 +59,10 @@ def b2 : Bool := false
 #eval m + 2         -- 3
 #eval b1 && b2      -- false
 ```
+``/-`` と ``-/`` の間のテキストはコメントブロックとなり、Leanでは無視されます。同様に、2つのダッシュ `--` は行の残りの部分にコメントが含まれていることを表し、これも無視されます。コメントブロックは入れ子にすることができ、多くのプログラミング言語と同じように、コードの塊を「コメントアウト」することができます。
 
+``def`` キーワードは新しい定数記号を作業環境に宣言します。上の例では、`def m : Nat := 1` は値が `1` である `Nat` 型の新しい定数 `m` を定義します。Lean では、システムに情報を問い合わせる補助コマンドは通常ハッシュ (#) 記号で始まります。`#eval` コマンドはLeanに与えられた式を評価するように要求します。自分でいくつかの定数を宣言し、いくつかの式を型チェックしてみてください。このように新しいオブジェクトを宣言することは、システムを試す良い方法です。
+<!-- 
 Any text between ``/-`` and ``-/`` constitutes a comment block that is
 ignored by Lean. Similarly, two dashes `--` indicate that the rest of
 the line contains a comment that is also ignored. Comment blocks can
@@ -73,7 +80,12 @@ You should try
 declaring some constants and type checking some expressions on your
 own. Declaring new objects in this manner is a good way to experiment
 with the system.
-
+-->
+単純型理論が強力なのは、他の型から新しい型を作ることができるからです。例えば、 ``a`` と ``b`` を型とすると、 ``a -> b`` は ``a`` から ``b`` への関数の型を表し、 ``a × b`` は ``a`` の要素と ``b`` の要素からなるペア(**直積**としても知られる)の型を表します。
+`×` はユニコード記号であることに注意してください。分別のあるUnicodeの使用は可読性が向上させます。
+すべての現代的なエディタはUnicodeの仕様をサポートします。
+リーンの標準ライブラリでは、型を表すギリシャ文字や、`->`をよりコンパクトにしたユニコード記号 `→` をよく見かけます。
+<!-- 
 What makes simple type theory powerful is that you can build new types
 out of others. For example, if ``a`` and ``b`` are types, ``a -> b``
 denotes the type of functions from ``a`` to ``b``, and ``a × b``
@@ -82,7 +94,7 @@ with an element of ``b``, also known as the *Cartesian product*. Note
 that `×` is a Unicode symbol. The judicious use of Unicode improves
 legibility, and all modern editors have great support for it. In the
 Lean standard library, you often see Greek letters to denote types,
-and the Unicode symbol `→` as a more compact version of `->`.
+and the Unicode symbol `→` as a more compact version of `->`. -->
 
 ```lean
 #check Nat → Nat      -- type the arrow as "\to" or "\r"
