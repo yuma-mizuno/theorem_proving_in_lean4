@@ -1,24 +1,34 @@
-Dependent Type Theory
+依存型理論 <!-- Dependent Type Theory -->
 =====================
 
-Dependent type theory is a powerful and expressive language, allowing
+依存型理論は強力で表現力豊かな言語であり、複雑な数学的主張を表現したり、
+複雑なハードウェアやソフトウェアの仕様を記述したり、これら両方について
+自然で統一された方法で推論したりすることができます。Leanは*Calculus of Constructions*
+として知られる依存型理論の一種に基づいており、さらに可算階層の非累積宇宙と帰納的型を
+備えています。この章が終わるころには、これが何を意味するのかが理解できるでしょう。
+<!-- Dependent type theory is a powerful and expressive language, allowing
 you to express complex mathematical assertions, write complex hardware
 and software specifications, and reason about both of these in a
 natural and uniform way. Lean is based on a version of dependent type
 theory known as the *Calculus of Constructions*, with a countable
 hierarchy of non-cumulative universes and inductive types. By the end
-of this chapter, you will understand much of what this means.
+of this chapter, you will understand much of what this means. -->
 
-## Simple Type Theory
+## 単純型理論
+<!-- ## Simple Type Theory -->
 
-"Type theory" gets its name from the fact that every expression has an
+「型理論」は、すべての式が付随する*型*を持つという事実からその名がついています。
+例えば、ある文脈では ``x + 0`` は自然数を表し、``f`` は自然数に対する関数を表します。
+正確な定義が好きな人のためにいうと、Leanの自然数は任意精度の符号なし整数です。
+以下は、Lean でオブジェクトを宣言し、その型を確認する方法の例です。
+<!-- "Type theory" gets its name from the fact that every expression has an
 associated *type*. For example, in a given context, ``x + 0`` may
 denote a natural number and ``f`` may denote a function on the natural
 numbers. For those who like precise definitions, a Lean natural number
 is an arbitrary-precision unsigned integer.
 
 Here are some examples of how you can declare objects in Lean and
-check their types.
+check their types. -->
 
 ```lean
 /- Define some constants. -/
