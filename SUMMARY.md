@@ -2,6 +2,19 @@
 
 [Theorem Proving in Lean 4](title_page.md)
 
+- [イントロダクション](./introduction.md)
+- [依存型理論](./dependent_type_theory.md)
+- [命題と証明](./propositions_and_proofs.md)
+- [量化と等号](./quantifiers_and_equality.md)
+- [戦術](./tactics.md)
+- [Leanと対話する](./interacting_with_lean.md)
+- [帰納型](./inductive_types.md)
+- [帰納と再帰](./induction_and_recursion.md)
+- [StructuresとRecords](./structures_and_records.md)
+- [型クラス](./type_classes.md)
+- [Conversion戦術モード](./conv.md)
+- [公理と計算](./axioms_and_computation.md)
+<!-- 
 - [Introduction](./introduction.md)
 - [Dependent Type Theory](./dependent_type_theory.md)
 - [Propositions and Proofs](./propositions_and_proofs.md)
@@ -14,3 +27,4 @@
 - [Type Classes](./type_classes.md)
 - [The Conversion Tactic Mode](./conv.md)
 - [Axioms and Computation](./axioms_and_computation.md)
+-->
