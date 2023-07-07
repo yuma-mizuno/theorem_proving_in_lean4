@@ -20,7 +20,7 @@ of this chapter, you will understand much of what this means.
 <!-- ## Simple Type Theory -->
 
 「型理論」は、すべての式が付随する*型*を持つという事実からその名がついています。
-例えば、ある文脈では ``x + 0`` は自然数を表し、``f`` は自然数に対する関数を表します。
+例えば、ある文脈では ``x + 0`` は自然数を表し、``f`` は自然数上の関数を表します。
 正確な定義が好きな人のためにいうと、Leanの自然数は任意精度の符号なし整数です。
 以下は、Lean でオブジェクトを宣言し、その型を確認する方法の例です。
 <!-- 
@@ -82,9 +82,9 @@ own. Declaring new objects in this manner is a good way to experiment
 with the system.
 -->
 単純型理論が強力なのは、他の型から新しい型を作ることができるからです。例えば、 ``a`` と ``b`` を型とすると、 ``a -> b`` は ``a`` から ``b`` への関数の型を表し、 ``a × b`` は ``a`` の要素と ``b`` の要素からなるペア(**直積**としても知られる)の型を表します。
-`×` はユニコード記号であることに注意してください。分別のあるUnicodeの使用は可読性が向上させます。
+`×` はUnicode記号であることに注意してください。分別のあるUnicodeの使用は可読性が向上させます。
 すべての現代的なエディタはUnicodeの使用をサポートします。
-リーンの標準ライブラリでは、型を表すギリシャ文字や、`->`をよりコンパクトにしたユニコード記号 `→` をよく見かけます。
+リーンの標準ライブラリでは、型を表すギリシャ文字や、`->`をよりコンパクトにしたUnicode記号 `→` をよく見かけます。
 <!-- 
 What makes simple type theory powerful is that you can build new types
 out of others. For example, if ``a`` and ``b`` are types, ``a -> b``
@@ -124,9 +124,12 @@ and the Unicode symbol `→` as a more compact version of `->`. -->
 #eval (5, 9).1     -- 5
 #eval (5, 9).2     -- 9
 ```
-
-Once again, you should try some examples on your own.
-
+もう一度、自分でいくつかの例を試してみてください。
+<!-- 
+Once again, you should try some examples on your own. 
+-->
+基本的な構文を見てみましょう。Unicodeの矢印 ``→`` は ``to`` または ``r`` または ``->`` とタイピングすることで入力できます。ASCIIの代替 ``->`` も使用できるため、``Nat -> Nat`` と ``Nat → Nat`` は同じ意味になります。どちらの式も自然数を入力とし自然数を出力として返す関数の型を表します。直積のUnicode記号 ``×`` は ``\times`` として入力されます。通常、型には ``α``,``β``, ``γ`` のような小文字のギリシャ文字を使用します。これらの特定の文字たちは``a``, ``b``, ``g`` で入力することができます。
+<!-- 
 Let's take a look at some basic syntax. You can enter the unicode
 arrow ``→`` by typing ``\to`` or ``\r`` or ``\->``. You can also use the
 ASCII alternative ``->``, so the expressions ``Nat -> Nat`` and ``Nat →
@@ -135,7 +138,7 @@ functions that take a natural number as input and return a natural
 number as output. The unicode symbol ``×`` for the Cartesian product
 is entered as ``\times``. You will generally use lower-case Greek
 letters like ``α``, ``β``, and ``γ`` to range over types. You can
-enter these particular ones with ``\a``, ``\b``, and ``\g``.
+enter these particular ones with ``\a``, ``\b``, and ``\g``. -->
 
 There are a few more things to notice here. First, the application of
 a function ``f`` to a value ``x`` is denoted ``f x`` (e.g., `Nat.succ 2`).
